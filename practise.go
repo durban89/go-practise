@@ -53,6 +53,18 @@ func switchWeek() {
 	}
 }
 
+func switchHour() {
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -76,4 +88,5 @@ func main() {
 
 	switchE()
 	switchWeek()
+	switchHour()
 }
