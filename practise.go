@@ -65,6 +65,22 @@ func switchHour() {
 	}
 }
 
+func deferEx() {
+	defer fmt.Println("world")
+
+	fmt.Println("Hello")
+}
+
+func stackDeferEx() {
+	fmt.Println("counting")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("done")
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -89,4 +105,6 @@ func main() {
 	switchE()
 	switchWeek()
 	switchHour()
+	deferEx()
+	stackDeferEx()
 }
