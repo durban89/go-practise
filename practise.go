@@ -7,6 +7,11 @@ import (
 	"time"
 )
 
+type Vertex struct {
+	X int
+	Y int
+}
+
 func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
@@ -93,6 +98,14 @@ func pointer1() {
 	fmt.Println(j)
 }
 
+func VertexEx() {
+	fmt.Println(Vertex{1, 2})
+
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -120,4 +133,5 @@ func main() {
 	deferEx()
 	stackDeferEx()
 	pointer1()
+	VertexEx()
 }
