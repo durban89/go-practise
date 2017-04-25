@@ -81,6 +81,18 @@ func stackDeferEx() {
 	fmt.Println("done")
 }
 
+func pointer1() {
+	i, j := 42, 2701
+	p := &i
+	fmt.Println(*p)
+	*p = 21
+	fmt.Println(i)
+
+	p = &j
+	*p = *p / 37
+	fmt.Println(j)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -107,4 +119,5 @@ func main() {
 	switchHour()
 	deferEx()
 	stackDeferEx()
+	pointer1()
 }
