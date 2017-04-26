@@ -12,6 +12,13 @@ type Vertex struct {
 	Y int
 }
 
+var (
+	v1 = Vertex{1, 2}
+	v2 = Vertex{X: 1}
+	v3 = Vertex{}
+	p  = &Vertex{1, 2}
+)
+
 func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
@@ -113,6 +120,10 @@ func VertexEx1() {
 	fmt.Println(v)
 }
 
+func VertexEx2() {
+	fmt.Println(v1, p, v2, v3)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -142,4 +153,5 @@ func main() {
 	pointer1()
 	VertexEx()
 	VertexEx1()
+	VertexEx2()
 }
