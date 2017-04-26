@@ -106,6 +106,13 @@ func VertexEx() {
 	fmt.Println(v)
 }
 
+func VertexEx1() {
+	v := Vertex{1, 2}
+	p := &v
+	p.X = 1e9
+	fmt.Println(v)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -134,4 +141,5 @@ func main() {
 	stackDeferEx()
 	pointer1()
 	VertexEx()
+	VertexEx1()
 }
