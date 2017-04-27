@@ -19,6 +19,8 @@ var (
 	p  = &Vertex{1, 2}
 )
 
+var arraysV [2]string
+
 func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
@@ -114,14 +116,52 @@ func VertexEx() {
 }
 
 func VertexEx1() {
-	v := Vertex{1, 2}
-	p := &v
-	p.X = 1e9
-	fmt.Println(v)
+	vv := Vertex{1, 2}
+	pp := &vv
+	pp.X = 1e9
+	fmt.Println(vv)
 }
 
 func VertexEx2() {
 	fmt.Println(v1, p, v2, v3)
+}
+
+func arraysEx() {
+	arraysV[0] = "Hello"
+	arraysV[1] = "world"
+
+	fmt.Println(arraysV[0], arraysV[1])
+
+	fmt.Println(arraysV)
+
+	primes := [6]int{22, 33, 44, 55, 6, 66}
+	fmt.Println(primes)
+}
+
+func sliceEx() {
+	primes := [6]int{1, 2, 3, 4, 5, 6}
+	var s []int = primes[1:4]
+	fmt.Println(s)
+}
+
+func slicesNameEx() {
+	names := [4]string{
+		"John",
+		"Paul",
+		"Georage",
+		"Ringo",
+	}
+
+	fmt.Println(names)
+
+	a := names[0:2]
+	b := names[1:2]
+
+	fmt.Println(a, b)
+
+	b[0] = "XXX"
+	fmt.Println(a, b)
+	fmt.Println(names)
 }
 
 func main() {
@@ -154,4 +194,7 @@ func main() {
 	VertexEx()
 	VertexEx1()
 	VertexEx2()
+	arraysEx()
+	sliceEx()
+	slicesNameEx()
 }
