@@ -164,6 +164,26 @@ func slicesNameEx() {
 	fmt.Println(names)
 }
 
+func sliceLiteralsEx() {
+	q := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	fmt.Println(q)
+
+	r := []bool{true, false, true, false}
+	fmt.Println(r)
+
+	s := []struct {
+		x int
+		y bool
+	}{
+		{2, true},
+		{3, false},
+		{4, true},
+		{5, false},
+		{6, true},
+	}
+	fmt.Println(s)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -197,4 +217,5 @@ func main() {
 	arraysEx()
 	sliceEx()
 	slicesNameEx()
+	sliceLiteralsEx()
 }
