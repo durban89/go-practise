@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"runtime"
+	"strings"
 	"time"
 )
 
@@ -235,6 +236,26 @@ func printSlice2(s string, x []int) {
 	fmt.Printf("%s, len=%d, cap=%d, %v \n", s, len(x), cap(x), x)
 }
 
+func SliceOfsliceEx() {
+	fmt.Println("====================SliceOfsliceEx====================")
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	// players has turns
+	board[0][0] = "X"
+	board[2][0] = "O"
+	board[2][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "X"
+
+	for i := 0; i < len(board); i++ {
+		fmt.Printf("%s \n", strings.Join(board[i], " "))
+	}
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -272,4 +293,5 @@ func main() {
 	sliceDefaultEx()
 	nilSliceEx()
 	CreateSliceWithMakeEx()
+	SliceOfsliceEx()
 }
