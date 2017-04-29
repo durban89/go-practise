@@ -280,6 +280,19 @@ func RangeEx() {
 	}
 }
 
+func RangeIndexEx() {
+	fmt.Println("====================RangeIndexEx====================")
+	pow := make([]int, 10)
+	for index := range pow {
+		pow[index] = 1 << uint(index) // 2 ** i
+	}
+
+	for _, value := range pow {
+		fmt.Printf("%d \n", value)
+	}
+
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -320,4 +333,5 @@ func main() {
 	SliceOfsliceEx()
 	AppendSliceEx()
 	RangeEx()
+	RangeIndexEx()
 }
