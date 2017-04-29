@@ -256,6 +256,22 @@ func SliceOfsliceEx() {
 	}
 }
 
+func AppendSliceEx() {
+	fmt.Println("====================AppendSliceEx====================")
+	var s []int
+	printSlice(s)
+
+	s = append(s, 0)
+	printSlice(s)
+
+	s = append(s, 1)
+	printSlice(s)
+
+	s = append(s, 2, 3, 4)
+	printSlice(s)
+
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -294,4 +310,5 @@ func main() {
 	nilSliceEx()
 	CreateSliceWithMakeEx()
 	SliceOfsliceEx()
+	AppendSliceEx()
 }
