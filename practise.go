@@ -13,6 +13,12 @@ type Vertex struct {
 	Y int
 }
 
+type Vertex1 struct {
+	Lat, Long float64
+}
+
+var m map[string]Vertex1
+
 var (
 	v1 = Vertex{1, 2}
 	v2 = Vertex{X: 1}
@@ -290,7 +296,17 @@ func RangeIndexEx() {
 	for _, value := range pow {
 		fmt.Printf("%d \n", value)
 	}
+}
 
+func MapEx() {
+	fmt.Println("====================MapEx====================")
+	m = make(map[string]Vertex1)
+
+	m["Bell Labs"] = Vertex1{
+		40.68433, -74.39967,
+	}
+
+	fmt.Println(m["Bell Labs"])
 }
 
 func main() {
@@ -334,4 +350,5 @@ func main() {
 	AppendSliceEx()
 	RangeEx()
 	RangeIndexEx()
+	MapEx()
 }
