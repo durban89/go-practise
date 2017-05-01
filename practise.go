@@ -309,6 +309,20 @@ func MapEx() {
 	fmt.Println(m["Bell Labs"])
 }
 
+func MapLiteralEx() {
+	fmt.Println("====================MapLiteralEx====================")
+	mm := map[string]Vertex1{
+		"one": Vertex1{
+			40.68433, -74.39967,
+		},
+		"two": Vertex1{
+			37.42202, -122.08408,
+		},
+	}
+
+	fmt.Println(mm)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -351,4 +365,5 @@ func main() {
 	RangeEx()
 	RangeIndexEx()
 	MapEx()
+	MapLiteralEx()
 }
