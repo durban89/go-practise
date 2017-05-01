@@ -323,6 +323,23 @@ func MapLiteralEx() {
 	fmt.Println(mm)
 }
 
+func MutatingMapsEx() {
+	fmt.Println("====================MutatingMapsEx====================")
+	mme := make(map[string]int)
+
+	mme["Answer"] = 42
+	fmt.Println("The value:", mme["Answer"])
+
+	mme["Answer"] = 8
+	fmt.Println("The value:", mme["Answer"])
+
+	delete(mme, "Answer")
+	fmt.Println("The value:", mme["Answer"])
+
+	v, ok := mme["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -366,4 +383,5 @@ func main() {
 	RangeIndexEx()
 	MapEx()
 	MapLiteralEx()
+	MutatingMapsEx()
 }
