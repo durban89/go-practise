@@ -6,6 +6,8 @@ import (
 	"runtime"
 	"strings"
 	"time"
+
+	"golang.org/x/tour/wc"
 )
 
 type Vertex struct {
@@ -340,6 +342,10 @@ func MutatingMapsEx() {
 	fmt.Println("The value:", v, "Present?", ok)
 }
 
+func WordCount(s string) map[string]int {
+	return map[string]int{"x": 1}
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -384,4 +390,5 @@ func main() {
 	MapEx()
 	MapLiteralEx()
 	MutatingMapsEx()
+	wc.Test(WordCount)
 }
