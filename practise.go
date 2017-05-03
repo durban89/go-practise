@@ -360,6 +360,25 @@ func FunctionValueEx() {
 
 }
 
+func adder() func(int) int {
+	sum := 0
+	return func(c int) int {
+		sum += c
+		return sum
+	}
+}
+
+func FunctionClosuresEx() {
+	fmt.Println("====================FunctionClosuresEx====================")
+	x, y := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			x(i),
+			y(-2*i),
+		)
+	}
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -406,4 +425,5 @@ func main() {
 	MutatingMapsEx()
 	// wc.Test(WordCount)
 	FunctionValueEx()
+	FunctionClosuresEx()
 }
