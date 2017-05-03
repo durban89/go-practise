@@ -6,8 +6,6 @@ import (
 	"runtime"
 	"strings"
 	"time"
-
-	"golang.org/x/tour/wc"
 )
 
 type Vertex struct {
@@ -346,6 +344,22 @@ func WordCount(s string) map[string]int {
 	return map[string]int{"x": 1}
 }
 
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+func FunctionValueEx() {
+	fmt.Println("====================FunctionValueEx====================")
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+	fmt.Println(hypot(5, 12))
+
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+
+}
+
 func main() {
 	sum := 0
 	for i := 0; i < 100; i++ {
@@ -390,5 +404,6 @@ func main() {
 	MapEx()
 	MapLiteralEx()
 	MutatingMapsEx()
-	wc.Test(WordCount)
+	// wc.Test(WordCount)
+	FunctionValueEx()
 }
